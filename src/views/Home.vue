@@ -62,11 +62,9 @@
         </div>
 
         <!-- 取得現在時間 -->
-        <ul class="mb-2 p-2">
-          <li>當前時間：</li>
-          <li>{{ nowDay }}</li>
-          <li>{{ nowTime }}</li>
-        </ul>
+        <div class="p-2 d-flex align-items-center">
+          <p>當前時間：{{ nowDay }}{{ nowTime }}</p>
+        </div>
       </div>
     </div>
   </nav>
@@ -150,8 +148,8 @@ export default {
 
 .dropdown-submenu>.dropdown-menu{
   top:0%;
-  left: 150%;
-  /* margin-top: 10px; */
+  left: 100%;
+  margin-top: -1px;
 }
 
 a {
@@ -167,11 +165,19 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 10px;
 }
 
 button>a:hover {
   color: #fff;
+}
+
+button li {
+  display: block;
+}
+
+p{
+  margin: unset;
 }
 </style>
