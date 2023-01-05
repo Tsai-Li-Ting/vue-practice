@@ -1,48 +1,66 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse d-flex align-items-center"
+        id="navbarSupportedContent"
+      >
         <!-- 首頁(下拉選單按鈕) -->
-        <ul class="navbar-nav me-auto p-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              首頁
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">交易查詢</a></li>
-              <li><a class="dropdown-item" href="#">帳務查詢</a></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="btn-group me-auto p-2">
+          <button type="button" class="btn btn-outline-secondary">
+            <router-link to="/" nested-dropdown-menu>首頁</router-link>
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <!-- Default dropend button -->
+            <div class="btn-group dropend">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropright
+              </button>
+              <ul class="dropdown-menu">
+                <li>111</li>
+              </ul>
+            </div>
+
+            <li><a class="dropdown-item" href="#">交易查詢</a></li>
+            <li><a class="dropdown-item" href="#">帳務查詢</a></li>
+          </ul>
+        </div>
 
         <!-- Account(下拉選單按鈕) -->
-        <ul class="navbar-nav mb-2 mb-lg-0 p-2">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Account
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">登出</a></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="dropdown bd p-2">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenu2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Account
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <button class="dropdown-item" type="button">
+                <router-link to="/login">登出</router-link>
+              </button>
+            </li>
+          </ul>
+        </div>
 
         <!-- 取得現在時間 -->
-        <ul class="mb-2 mb-lg-0 p-2">
+        <ul class="mb-2 p-2">
           <li>當前時間：</li>
           <li>{{ nowDay }}</li>
           <li>{{ nowTime }}</li>
@@ -115,6 +133,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+a {
+  text-decoration: none;
+}
 h3 {
   margin: 40px 0 0;
 }
