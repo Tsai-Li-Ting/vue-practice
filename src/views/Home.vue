@@ -5,11 +5,13 @@
         class="collapse navbar-collapse d-flex align-items-center"
         id="navbarSupportedContent"
       >
-        <!-- 首頁(下拉選單按鈕) -->
-        <div class="btn-group me-auto p-2">
+        <!-- 首頁 ▾ -->
+        <div class="navbar-nav btn-group me-auto">
+          <!-- 首頁 (按鈕) -->
           <button type="button" class="btn btn-outline-secondary">
-            <router-link to="/" nested-dropdown-menu>首頁</router-link>
+            <router-link to="/">首頁</router-link>
           </button>
+          <!-- ▾ (下拉選單按鈕) -->
           <button
             type="button"
             class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
@@ -18,29 +20,29 @@
           >
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
+          <!-- 下拉選單選項 start -->
           <ul class="dropdown-menu">
-            <!-- Default dropend button -->
-            <div class="btn-group dropend">
-              <button
-                type="button"
-                class="btn btn-secondary dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropright
-              </button>
-              <ul class="dropdown-menu">
-                <li>111</li>
-              </ul>
-            </div>
+            <!-- 交易查詢 ▾ -->
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">交易查詢</a>
 
-            <li><a class="dropdown-item" href="#">交易查詢</a></li>
+              <!-- 子選單Level 2 start-->
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">委託查詢</a>
+                  <a class="dropdown-item" href="#">成交查詢</a>
+                </li>
+              </ul>
+              <!-- 子選單Level 2 end-->
+
+            </li>
             <li><a class="dropdown-item" href="#">帳務查詢</a></li>
           </ul>
+
+          <!-- 下拉選單選項 end -->
         </div>
 
         <!-- Account(下拉選單按鈕) -->
-        <div class="dropdown bd p-2">
+        <div class="dropdown bd">
           <button
             class="btn btn-outline-secondary dropdown-toggle"
             type="button"
@@ -68,6 +70,10 @@
       </div>
     </div>
   </nav>
+
+  <p>
+    /views/Home.vue
+  </p>
 </template>
 
 <script>
@@ -133,9 +139,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
-  text-decoration: none;
+
+.navbar-nav li:hover>ul.dropdown-menu{
+  display: block;
 }
+
+.dropdown-submenu{
+  position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu{
+  top:0%;
+  left: 150%;
+  /* margin-top: 10px; */
+}
+
+a {
+  text-decoration: none; 
+  color: #000;
+}
+
 h3 {
   margin: 40px 0 0;
 }
@@ -147,7 +170,8 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #000;
+
+button>a:hover {
+  color: #fff;
 }
 </style>

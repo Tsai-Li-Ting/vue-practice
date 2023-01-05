@@ -58,9 +58,9 @@
               <button
                 type="button"
                 class="btn btn-lg btn-primary btn-block"
-                v-on:click="greet"
               >
-               登入
+              <router-link to="/">登入</router-link>
+               
               </button>
             </div>
             <div class="col-6">
@@ -121,6 +121,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  text-decoration: none;
+  color: #fff;
 }
 </style>
