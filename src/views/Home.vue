@@ -169,7 +169,7 @@ li {
   margin: 0 10px;
 }
 
-button>a:hover {
+.navbar-nav a:hover {
   color: #fff;
 }
 
