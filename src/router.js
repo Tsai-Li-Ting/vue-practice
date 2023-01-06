@@ -3,7 +3,8 @@ import Home from './views/Home.vue'
 
 export default () => createRouter({
   history: createWebHistory(),
-  routes: [    
+  routes: [
+    //初始畫面    
     {
       path: '/',
       name: 'Login',
