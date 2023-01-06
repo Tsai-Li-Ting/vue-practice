@@ -47,6 +47,7 @@
             </div>
           </div>
           <hr />
+          
           <!-- 有值才會顯示 -->
           <div v-if="loginForm.account || loginForm.password || loginForm.birthday"></div>
           <p v-if="loginForm.account">Account: {{ loginForm.account }}</p>
