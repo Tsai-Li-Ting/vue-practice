@@ -59,7 +59,7 @@
             <div class="row">
               <div class="col-6">
                 <button type="button" class="btn btn-lg btn-primary btn-block">
-                  <router-link to="/">登入</router-link>
+                  <router-link to="/home">登入</router-link>
                 </button>
               </div>
               <div class="col-6">

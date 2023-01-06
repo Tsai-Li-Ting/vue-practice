@@ -1,20 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router/dist/vue-router.esm-bundler'
-import Home from './views/Home.vue'
+// import Home from './views/Home.vue'
+import Login from './views/Login.vue'
 
 export default () => createRouter({
   history: createWebHistory(),
   routes: [
-    //初始畫面    
+    // {
+    //   path: '/',
+    //   name: 'Home',
+    //   component: Home,
+    // },
+    // {
+    //   path: '/login',
+    //   name: 'Login',
+    //   component: () => import('./views/Login.vue')
+    // },
     {
       path: '/',
       name: 'Login',
-      component: () => import('./views/Login.vue')
+      component: Login,
     },
     {
       path: '/home',
       name: 'Home',
-      component: Home,
-      meta: { requireAuth: true }, // 用來作為此頁是否需要權限驗證的設定
+      component: () => import('./views/Home.vue')
     },
   ]
 })

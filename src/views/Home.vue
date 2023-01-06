@@ -55,7 +55,7 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li>
               <button class="dropdown-item" type="button">
-                <router-link to="/login">登出</router-link>
+                <router-link to="/">登出</router-link>
               </button>
             </li>
           </ul>
