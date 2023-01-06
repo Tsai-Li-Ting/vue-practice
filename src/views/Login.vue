@@ -14,7 +14,7 @@
               >Account:</label
             >
             <div class="col-7 align-self-center">
-              <input class="form-control" type="text" v-model="account" />
+              <input class="form-control" type="text" v-model="loginForm.account" />
             </div>
           </div>
           <!-- Password Input -->
@@ -27,7 +27,7 @@
                 type="password"
                 class="form-control"
                 id="inputPassword"
-                v-model="password"
+                v-model="loginForm.password"
               />
             </div>
           </div>
@@ -42,16 +42,16 @@
                 type="date"
                 class="form-control"
                 id="inputPassword"
-                v-model="birthday"
+                v-model="loginForm.birthday"
               />
             </div>
           </div>
           <hr />
           <!-- 有值才會顯示 -->
-          <div v-if="account || password || birthday"></div>
-          <p v-if="account">Account: {{ account }}</p>
-          <p v-if="password">Password: {{ password }}</p>
-          <p v-if="birthday">Birthday: {{ birthday }}</p>
+          <div v-if="loginForm.account || loginForm.password || loginForm.birthday"></div>
+          <p v-if="loginForm.account">Account: {{ loginForm.account }}</p>
+          <p v-if="loginForm.password">Password: {{ loginForm.password }}</p>
+          <p v-if="loginForm.birthday">Birthday: {{ loginForm.birthday }}</p>
 
           <!-- button -->
           <div class="container">
@@ -86,9 +86,12 @@ export default {
   el: "#app",
   data() {
     return {
-      account: "",
-      password: "",
-      birthday: "",
+      loginForm: {
+        account: '',
+        password: '',
+        birthday:'',
+        token: ''
+      }
     };
   },
   /**彈出視窗 */
@@ -97,9 +100,9 @@ export default {
       alert("登入成功");
     },
     cleanForm:function(){
-      this.account = "";
-      this.password= "";
-      this.birthday= "";
+      this.loginForm.account = "";
+      this.loginForm.password= "";
+      this.loginForm.birthday= "";
     }
   },
 };
