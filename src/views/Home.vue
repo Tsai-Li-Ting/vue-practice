@@ -1,4 +1,5 @@
 <template>
+  <div class="HomeBlock">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <div
@@ -49,8 +50,9 @@
             id="dropdownMenu2"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            
           >
-            Account
+            {{account}}
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li>
@@ -72,6 +74,7 @@
   <p>
     /views/Home.vue
   </p>
+</div>
 </template>
 
 <script>
@@ -85,6 +88,7 @@ export default {
     return {
       nowDay: "",
       nowTime: "",
+      account:"Account",
     };
   },
   // },

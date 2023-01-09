@@ -1,4 +1,6 @@
 <template>
+  <div id="Login">
+
     <!-- header -->
     <nav class="navbar navbar-light bg-light mb-3">
       <div class="container-fluid">
@@ -19,7 +21,7 @@
           </div>
           <!-- Password Input -->
           <div class="mb-3 row">
-            <label for="inputPassword" class="col-3 col-form-label"
+            <label for="inputPassword" class="col-3 col-form-label" 
               >Password:</label
             >
             <div class="col-7 align-self-center">
@@ -74,6 +76,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 </template>
 
